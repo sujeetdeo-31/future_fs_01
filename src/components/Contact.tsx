@@ -16,24 +16,58 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    toast({
-      title: "Message Sent Successfully!",
-      description: "I'll get back to you within 24 hours.",
-    });
-
-    // Reset success state after 5 seconds to show form again
-    setTimeout(() => {
-      setIsSuccess(false);
-      (e.target as HTMLFormElement).reset();
-    }, 5000);
+  
+    const formData = new FormData(e.currentTarget);
+  
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+  
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      const result = await response.json();
+  
+      if (!response.ok) {
+        throw new Error(result.error || "Something went wrong");
+      }
+  
+      setIsSuccess(true);
+  
+      toast({
+        title: "Message Sent Successfully!",
+        description: "I'll get back to you soon.",
+      });
+  
+      e.currentTarget.reset();
+  
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 5000);
+  
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+   
 
   return (
     <section id="contact" className="py-24 bg-secondary/30 relative overflow-hidden">
@@ -55,7 +89,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Email Me</p>
-                  <p className="text-xl font-headline font-bold">contact@eliteportfolio.com</p>
+                  <p className="text-xl font-headline font-bold">sujitkumardeo31@gmail.com</p>
                 </div>
               </div>
               
@@ -65,7 +99,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Call Me</p>
-                  <p className="text-xl font-headline font-bold">+1 (555) 123-4567</p>
+                  <p className="text-xl font-headline font-bold">+91 7978060382</p>
                 </div>
               </div>
               
@@ -75,7 +109,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Location</p>
-                  <p className="text-xl font-headline font-bold">San Francisco, CA</p>
+                  <p className="text-xl font-headline font-bold">Bhubaneswar, IN</p>
                 </div>
               </div>
             </div>
@@ -103,20 +137,20 @@ export function Contact() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold uppercase tracking-widest opacity-70">Name</label>
-                    <Input placeholder="John Doe" required className="bg-secondary/50 border-none h-12 focus:ring-1 focus:ring-primary" />
+                    <Input name="name" placeholder="John Doe" required className="bg-secondary/50 border-none h-12 focus:ring-1 focus:ring-primary"/>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold uppercase tracking-widest opacity-70">Email</label>
-                    <Input type="email" placeholder="john@example.com" required className="bg-secondary/50 border-none h-12 focus:ring-1 focus:ring-primary" />
+                    <Input name="email" type="email" placeholder="john@example.com" required className="bg-secondary/50 border-none h-12 focus:ring-1 focus:ring-primary"/>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold uppercase tracking-widest opacity-70">Subject</label>
-                  <Input placeholder="Project Inquiry" required className="bg-secondary/50 border-none h-12 focus:ring-1 focus:ring-primary" />
+                  <Input name="subject" placeholder="Project Inquiry" required className="bg-secondary/50 border-none h-12 focus:ring-1 focus:ring-primary"/>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold uppercase tracking-widest opacity-70">Message</label>
-                  <Textarea placeholder="Tell me about your project..." required className="bg-secondary/50 border-none min-h-[150px] focus:ring-1 focus:ring-primary" />
+                  <Textarea  name="message" placeholder="Tell me about your project..." required className="bg-secondary/50 border-none min-h-[150px] focus:ring-1 focus:ring-primary"/>
                 </div>
                 <Button type="submit" disabled={isSubmitting} className="w-full h-14 rounded-full font-bold text-lg shadow-xl shadow-primary/20 transition-all active:scale-95">
                   {isSubmitting ? "Sending Message..." : <><Send className="mr-2 w-5 h-5" /> Send Message</>}

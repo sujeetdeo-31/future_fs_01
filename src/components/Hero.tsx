@@ -23,10 +23,10 @@ export function Hero() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-primary font-bold tracking-widest uppercase mb-4 block">
-              Software Architect & Developer
+            Full Stack Developer & CS Student
             </span>
             <h1 className="text-5xl md:text-7xl font-headline font-bold mb-6 leading-tight">
-              Designing the future of <span className="text-primary">Digital Experience</span>
+            Building Modern Full-Stack <span className="text-primary">Web Applications</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
               I build robust, scalable, and highly performant applications using modern tech stacks. Specialized in Full-Stack development and Cloud Architecture.
@@ -53,15 +53,15 @@ export function Hero() {
 
             <div className="flex items-center gap-8 py-6 border-t border-border">
               <div>
-                <p className="text-3xl font-headline font-bold">10+</p>
+                <p className="text-3xl font-headline font-bold">1</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest">Years Experience</p>
               </div>
               <div>
-                <p className="text-3xl font-headline font-bold">150+</p>
+                <p className="text-3xl font-headline font-bold">3</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest">Projects Done</p>
               </div>
               <div>
-                <p className="text-3xl font-headline font-bold">50+</p>
+                <p className="text-3xl font-headline font-bold">0</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-widest">Global Clients</p>
               </div>
             </div>
