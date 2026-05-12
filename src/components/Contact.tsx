@@ -19,8 +19,9 @@ export function Contact() {
   
     setIsSubmitting(true);
   
-    const formData = new FormData(e.currentTarget);
-  
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -50,7 +51,7 @@ export function Contact() {
         description: "I'll get back to you soon.",
       });
   
-      e.currentTarget.reset();
+      form.reset();
   
       setTimeout(() => {
         setIsSuccess(false);
