@@ -1,97 +1,193 @@
-
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, Briefcase, GraduationCap } from "lucide-react";
+import { Download, GraduationCap, Code2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const EXPERIENCE = [
+const PROJECTS = [
   {
-    role: "Senior Software Architect",
-    company: "Global Tech Solutions",
-    period: "2021 — Present",
-    desc: "Leading a team of 15 developers in building cloud-native SaaS platforms. Implemented microservices architecture that reduced operational costs by 30%."
+    title: "Travel AI – Predictive Intelligence Engine",
+    tech: "Next.js, React, TypeScript, Tailwind CSS, Google Gemini API, Framer Motion, Node.js",
+    desc:
+      "Built an AI-powered travel analysis dashboard with interactive data panels, structured travel insights, and server-side API handling for fast responses and improved stability.",
   },
   {
-    role: "Full-Stack Developer",
-    company: "Innovate AI",
-    period: "2018 — 2021",
-    desc: "Developed machine learning integration modules for predictive maintenance. Scaled system throughput to handle 1M+ daily transactions."
+    title: "Health Insurance Cost Prediction Using Machine Learning",
+    tech: "Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Streamlit",
+    desc:
+      "Developed an end-to-end ML pipeline for insurance cost prediction, including feature engineering, model training, evaluation, and a Streamlit web app for real-time predictions.",
   },
-  {
-    role: "Junior Web Engineer",
-    company: "StartUp Hub",
-    period: "2015 — 2018",
-    desc: "Responsive web development focusing on SEO and performance optimization. Built reusable UI component libraries used across multiple client projects."
-  }
 ];
 
-const EDUCATION = [
-  {
-    degree: "M.S. in Computer Science",
-    school: "Stanford University",
-    period: "2013 — 2015"
-  },
-  {
-    degree: "B.S. in Software Engineering",
-    school: "MIT",
-    period: "2009 — 2013"
-  }
+const COURSEWORK = [
+  "Data Structures and Algorithms",
+  "Object Oriented Programming",
+  "Database Management System",
+  "Computer Networks",
+];
+
+const SKILLS = [
+  "Python",
+  "C",
+  "C++",
+  "Java",
+  "JavaScript",
+  "React.js",
+  "Next.js",
+  "TypeScript",
+  "Tailwind CSS",
+  "Node.js",
+  "MongoDB",
+  "MySQL",
+  "NumPy",
+  "Pandas",
+  "Scikit-learn",
+  "Matplotlib",
+  "Seaborn",
+  "Streamlit",
+  "Git",
+  "GitHub",
+  "Vercel",
 ];
 
 export function Resume() {
   return (
     <section id="resume" className="py-24">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16">
-          <div className="lg:w-2/3">
-            <h2 className="text-4xl font-headline font-bold mb-12 flex items-center gap-4">
-              <Briefcase className="text-primary w-10 h-10" />
-              Professional Experience
-            </h2>
-            
-            <div className="space-y-12 relative border-l-2 border-primary/20 pl-8 ml-4">
-              {EXPERIENCE.map((exp, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="relative"
-                >
-                  <div className="absolute -left-[41px] top-0 w-5 h-5 bg-background border-4 border-primary rounded-full" />
-                  <span className="text-primary font-bold text-sm tracking-widest">{exp.period}</span>
-                  <h3 className="text-2xl font-headline font-bold mt-2">{exp.role}</h3>
-                  <p className="text-muted-foreground font-medium mb-4">{exp.company}</p>
-                  <p className="text-muted-foreground max-w-2xl leading-relaxed">{exp.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+        <div className="mb-12 flex flex-col gap-4">
+          <h2 className="text-4xl font-headline font-bold flex items-center gap-4">
+            <Sparkles className="text-primary w-10 h-10" />
+            Resume Overview
+          </h2>
+          <p className="text-muted-foreground max-w-3xl leading-relaxed">
+            A concise summary of my academic background, technical skills, and
+            the projects I have built so far.
+          </p>
+        </div>
 
-          <div className="lg:w-1/3">
-            <div className="bg-card border border-border p-10 rounded-3xl mb-12">
-              <h2 className="text-2xl font-headline font-bold mb-8 flex items-center gap-4">
-                <GraduationCap className="text-primary w-8 h-8" />
-                Education
-              </h2>
-              <div className="space-y-8">
-                {EDUCATION.map((edu, i) => (
-                  <div key={i}>
-                    <span className="text-primary font-bold text-xs uppercase tracking-widest">{edu.period}</span>
-                    <h4 className="text-xl font-headline font-bold mt-1">{edu.degree}</h4>
-                    <p className="text-muted-foreground text-sm">{edu.school}</p>
-                  </div>
+        <div className="grid lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 space-y-8">
+            <div className="bg-card border border-border p-8 rounded-3xl shadow-lg">
+              <h3 className="text-2xl font-headline font-bold mb-4">Summary</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Computer Science undergraduate focused on Data Structures and
+                Algorithms, Web Development, and Machine Learning. Built
+                AI-powered web applications integrating LLM APIs and machine
+                learning models, applying data-driven insights to solve
+                real-world problems. Actively strengthening algorithmic
+                thinking through consistent practice and hands-on development.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border p-8 rounded-3xl shadow-lg">
+              <h3 className="text-2xl font-headline font-bold mb-8 flex items-center gap-3">
+                <Code2 className="text-primary w-7 h-7" />
+                Projects
+              </h3>
+
+              <div className="space-y-8 relative border-l-2 border-primary/20 pl-8 ml-3">
+                {PROJECTS.map((project, i) => (
+                  <motion.div
+                    key={project.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="relative"
+                  >
+                    <div className="absolute -left-[41px] top-1 w-5 h-5 bg-background border-4 border-primary rounded-full" />
+                    <div className="flex flex-col gap-1">
+                    <h4 className="text-xl font-headline font-bold">{project.title}</h4>
+                      <p className="text-sm text-muted-foreground italic">
+                        {project.tech}
+                      </p>
+                      <p className="text-muted-foreground mt-3 leading-relaxed">
+                        {project.desc}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-primary p-10 rounded-3xl text-primary-foreground relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 -translate-y-1/2 translate-x-1/2 rounded-full group-hover:scale-150 transition-transform duration-700" />
-              <h3 className="text-2xl font-headline font-bold mb-4 relative z-10">Interested in my work?</h3>
-              <p className="mb-8 opacity-90 relative z-10">Get a comprehensive view of my journey and skills in a single PDF document.</p>
-              <Button variant="secondary" className="w-full rounded-full font-bold relative z-10">
-                <Download className="mr-2 w-4 h-4" /> Download Resume
+            <div className="bg-card border border-border p-8 rounded-3xl shadow-lg">
+              <h3 className="text-2xl font-headline font-bold mb-6">
+                Technical Skills
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {SKILLS.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 rounded-full bg-secondary/60 border border-border text-sm font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="bg-card border border-border p-8 rounded-3xl shadow-lg">
+              <h3 className="text-2xl font-headline font-bold mb-6 flex items-center gap-3">
+                <GraduationCap className="text-primary w-7 h-7" />
+                Education
+              </h3>
+
+              <div className="space-y-4">
+                <div>
+                  <span className="text-primary font-bold text-sm uppercase tracking-widest">
+                    Aug 2024 — Present
+                  </span>
+                  <h4 className="text-xl font-headline font-bold mt-1">
+                    B.Tech in Computer Science and Technology
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    C.V. Raman Global University
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    Bhubaneswar, Odisha
+                  </p>
+                  <p className="mt-2 text-sm">
+                    CGPA: <span className="font-semibold">8.90</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card border border-border p-8 rounded-3xl shadow-lg">
+              <h3 className="text-2xl font-headline font-bold mb-6">
+                Relevant Coursework
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {COURSEWORK.map((item) => (
+                  <span
+                    key={item}
+                    className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-primary p-8 rounded-3xl text-primary-foreground relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <h3 className="text-2xl font-headline font-bold mb-3 relative z-10">
+                Download Resume
+              </h3>
+              <p className="mb-6 opacity-90 relative z-10">
+                Get a PDF copy of my resume with education, skills, and project
+                details.
+              </p>
+              <Button
+                asChild
+                variant="secondary"
+                className="w-full rounded-full font-bold relative z-10"
+              >
+                <a href="/resume.pdf" download>
+                  <Download className="mr-2 w-4 h-4" />
+                  Download Resume
+                </a>
               </Button>
             </div>
           </div>

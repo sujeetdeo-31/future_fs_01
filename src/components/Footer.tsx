@@ -36,10 +36,10 @@ export function Footer() {
 
           <div className="flex flex-col items-center md:items-end gap-6">
             <div className="flex gap-4">
-              <a href="#" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href="https://github.com/SujeetDeo-31" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href="https://www.linkedin.com/in/sujeet31in/" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="#" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">

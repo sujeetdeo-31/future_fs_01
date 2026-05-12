@@ -29,7 +29,7 @@ export function Hero() {
             Building Modern Full-Stack <span className="text-primary">Web Applications</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              I build robust, scalable, and highly performant applications using modern tech stacks. Specialized in Full-Stack development and Cloud Architecture.
+            I am a Computer Science student passionate about full-stack web development and building modern responsive applications using React, Node.js, and MongoDB.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-10">
@@ -39,32 +39,40 @@ export function Hero() {
                 </a>
               </Button>
               <div className="flex items-center gap-4 px-4">
-                <a href="#" className="p-2 text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://github.com/SujeetDeo-31" className="p-2 text-muted-foreground hover:text-primary transition-colors">
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="#" className="p-2 text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/sujeet31in/" className="p-2 text-muted-foreground hover:text-primary transition-colors">
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href="mailto:contact@example.com" className="p-2 text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:sujitkumardeo31@gmail.com" className="p-2 text-muted-foreground hover:text-primary transition-colors">
                   <Mail className="w-6 h-6" />
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-8 py-6 border-t border-border">
-              <div>
-                <p className="text-3xl font-headline font-bold">1</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest">Years Experience</p>
-              </div>
-              <div>
-                <p className="text-3xl font-headline font-bold">3</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest">Projects Done</p>
-              </div>
-              <div>
-                <p className="text-3xl font-headline font-bold">0</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest">Global Clients</p>
-              </div>
-            </div>
+  <div className="flex items-center gap-8 py-6 border-t border-border">
+  <div>
+    <p className="text-3xl font-headline font-bold">5+</p>
+    <p className="text-xs text-muted-foreground uppercase tracking-widest">
+      Projects Built
+    </p>
+  </div>
+
+  <div>
+    <p className="text-3xl font-headline font-bold">Full Stack</p>
+    <p className="text-xs text-muted-foreground uppercase tracking-widest">
+      Web Development
+    </p>
+  </div>
+
+  <div>
+    <p className="text-3xl font-headline font-bold">Open Source</p>
+    <p className="text-xs text-muted-foreground uppercase tracking-widest">
+      Learning Journey
+    </p>
+  </div>
+</div>
           </motion.div>
 
           <motion.div
@@ -92,7 +100,7 @@ export function Hero() {
               className="absolute -bottom-6 -left-6 bg-card border border-border p-6 rounded-2xl shadow-2xl"
             >
               <p className="text-primary font-bold text-sm uppercase mb-1">Current Focus</p>
-              <p className="font-headline text-xl">Cloud Native SaaS</p>
+              <p className="font-headline text-xl">Full Stack Development</p>
             </motion.div>
           </motion.div>
         </div>
