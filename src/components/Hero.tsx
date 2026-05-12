@@ -12,6 +12,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-1/2 pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -38,13 +39,26 @@ export function Hero() {
                 </a>
               </Button>
               <div className="flex items-center gap-4 px-4">
-                <a href={PORTFOLIO_DATA.socials.github} target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-primary transition-colors">
+                <a 
+                  href={PORTFOLIO_DATA.socials.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                >
                   <Github className="w-6 h-6" />
                 </a>
-                <a href={PORTFOLIO_DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 text-muted-foreground hover:text-primary transition-colors">
+                <a 
+                  href={PORTFOLIO_DATA.socials.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                >
                   <Linkedin className="w-6 h-6" />
                 </a>
-                <a href={`mailto:${PORTFOLIO_DATA.email}`} className="p-2 text-muted-foreground hover:text-primary transition-colors">
+                <a 
+                  href={`mailto:${PORTFOLIO_DATA.email}`} 
+                  className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                >
                   <Mail className="w-6 h-6" />
                 </a>
               </div>
@@ -80,6 +94,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
             </div>
             
+            {/* Floating stats card */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
