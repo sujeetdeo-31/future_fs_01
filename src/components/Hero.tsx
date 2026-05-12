@@ -3,12 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import { PORTFOLIO_DATA } from "@/lib/constants";
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-bg');
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
@@ -84,7 +82,7 @@ export function Hero() {
           >
             <div className="aspect-square relative rounded-3xl overflow-hidden border-2 border-primary/20 shadow-2xl">
               <Image
-                src={heroImage?.imageUrl || "https://picsum.photos/seed/elite/800/800"}
+                src={PORTFOLIO_DATA.hero.image}
                 alt={PORTFOLIO_DATA.name}
                 width={800}
                 height={800}

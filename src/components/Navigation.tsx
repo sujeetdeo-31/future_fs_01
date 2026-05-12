@@ -41,7 +41,7 @@ export function Navigation() {
             <Code className="w-6 h-6 text-primary-foreground" />
           </div>
           <span className="text-xl font-headline font-bold tracking-tight">
-            Elite<span className="text-primary">Portfolio</span>
+            Sujeet's<span className="text-primary">Portfolio</span>
           </span>
         </Link>
 

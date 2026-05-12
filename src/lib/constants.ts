@@ -13,16 +13,17 @@ export const PORTFOLIO_DATA = {
   location: "Bhubaneswar, IN",
   resumeUrl: "/resume.pdf",
   metadata: {
-    title: "Elite Portfolio | Sujeet Deo",
+    title:"Sujeet Deo | Full Stack Developer",
     description: "Computer Science student passionate about full-stack web development and building modern responsive applications.",
   },
   socials: {
     github: "https://github.com/SujeetDeo-31",
     linkedin: "https://www.linkedin.com/in/sujeet31in/",
-    twitter: "#",
+    twitter: "https://x.com/deosujeet31",
   },
   hero: {
     title: "Building Modern Full-Stack",
+    image: "/hero/Sujeet.jpeg",
     titleAccent: "Web Applications",
     description: "I am a Computer Science student passionate about full-stack web development and building modern responsive applications using React, Node.js, and MongoDB.",
     stats: [
@@ -53,10 +54,10 @@ export const PORTFOLIO_DATA = {
     summary: "Computer Science undergraduate focused on Data Structures and Algorithms, Web Development, and Machine Learning. Built AI-powered web applications integrating LLM APIs and machine learning models, applying data-driven insights to solve real-world problems.",
   },
   contact: {
-    description: "Ready to take your project to the next level? I'm currently available for selective opportunities and learning experiences.",
+    description: "Feel free to reach out for collaboration, project discussions, or opportunities related to web development and software engineering.",
   },
   footer: {
-    description: "Creating digital excellence through code and design. Based in Bhubaneswar, working globally.",
+    description: "Passionate about full-stack development, modern web technologies, and continuous learning through real-world projects.",
   },
   education: [
     {
@@ -71,6 +72,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "project-1",
       title: "Travel AI – Predictive Intelligence Engine",
+      image: "/projects/insurance-ml.png",
       desc: "An AI-powered travel analysis dashboard that uses Google Gemini API to generate structured travel insights, compare trip options, and help users plan trips more efficiently through interactive data panels.",
       techs: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Gemini API"],
       github: "https://github.com/SujeetDeo-31/travel-intelligence-engine",
@@ -79,6 +81,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "project-2",
       title: "Health Insurance Cost Prediction",
+      image: "/projects/travel-ai.png",
       desc: "A machine learning web application that predicts health insurance charges using demographic and lifestyle data. Built with feature engineering, model evaluation, and deployed with Streamlit for real-time predictions.",
       techs: ["Python", "Scikit-learn", "Pandas", "NumPy", "Streamlit", "Machine Learning"],
       github: "https://github.com/SujeetDeo-31/Health-Insurance-Charges-Predictor-AI",

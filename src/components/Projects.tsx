@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import { PORTFOLIO_DATA } from "@/lib/constants";
 
@@ -23,8 +22,6 @@ export function Projects() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {PORTFOLIO_DATA.projects.map((project, i) => {
-            const imgData = PlaceHolderImages.find((img) => img.id === project.id);
-
             return (
               <motion.div
                 key={project.id}
@@ -35,12 +32,11 @@ export function Projects() {
               >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
-                    src={imgData?.imageUrl || "https://picsum.photos/seed/p/800/450"}
+                    src={project.image}
                     alt={project.title}
                     width={800}
                     height={450}
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    data-ai-hint={imgData?.imageHint || "software screenshot"}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
 
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
@@ -80,16 +76,6 @@ export function Projects() {
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
                     {project.desc}
                   </p>
-
-                  <div className="pt-6 border-t border-border mt-auto">
-                    <Button
-                      variant="link"
-                      className="p-0 h-auto text-primary font-bold group-hover:translate-x-1 transition-transform"
-                    >
-                      Read Case Study
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </div>
                 </div>
               </motion.div>
             );
