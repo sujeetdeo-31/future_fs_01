@@ -76,7 +76,7 @@ export function Contact() {
           <div>
             <h2 className="text-4xl font-headline font-bold mb-6">Let's <span className="text-primary">Collaborate</span></h2>
             <p className="text-muted-foreground text-lg mb-12">
-              Ready to take your project to the next level? I'm currently available for selective opportunities and learning experiences.
+              {PORTFOLIO_DATA.contact.description}
             </p>
             
             <div className="space-y-8">

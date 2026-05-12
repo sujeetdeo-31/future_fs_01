@@ -16,10 +16,10 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-10 text-center md:text-left">
           <div className="max-w-xs">
             <Link href="/" className="text-2xl font-headline font-bold tracking-tight mb-4 block">
-              Elite<span className="text-primary">Portfolio</span>
+              {PORTFOLIO_DATA.firstName}<span className="text-primary">{PORTFOLIO_DATA.lastName}</span>
             </Link>
             <p className="text-muted-foreground text-sm">
-              Creating digital excellence through code and design. Based in {PORTFOLIO_DATA.location}, working globally.
+              {PORTFOLIO_DATA.footer.description}
             </p>
           </div>
           
@@ -37,12 +37,15 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-end gap-6">
             <div className="flex gap-4">
               <a href={PORTFOLIO_DATA.socials.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+                <span className="sr-only">GitHub</span>
                 <Github className="w-5 h-5" />
               </a>
               <a href={PORTFOLIO_DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+                <span className="sr-only">LinkedIn</span>
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href={PORTFOLIO_DATA.socials.twitter} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+                <span className="sr-only">Twitter</span>
                 <Twitter className="w-5 h-5" />
               </a>
             </div>

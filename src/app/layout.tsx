@@ -1,13 +1,13 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
+import { PORTFOLIO_DATA } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Elite Portfolio | Modern Software Engineer',
-  description: 'Showcase of premium development projects, skills, and professional experience of a senior software architect.',
+  title: PORTFOLIO_DATA.metadata.title,
+  description: PORTFOLIO_DATA.metadata.description,
   openGraph: {
-    title: 'Elite Portfolio | Premium Software Development',
-    description: 'Expertise in modern web technologies, cloud architecture, and high-performance applications.',
+    title: PORTFOLIO_DATA.metadata.title,
+    description: PORTFOLIO_DATA.metadata.description,
     type: 'website',
   },
 };

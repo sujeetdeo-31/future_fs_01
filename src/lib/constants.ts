@@ -12,6 +12,10 @@ export const PORTFOLIO_DATA = {
   phone: "+91 7978060382",
   location: "Bhubaneswar, IN",
   resumeUrl: "/resume.pdf",
+  metadata: {
+    title: "Elite Portfolio | Sujeet Deo",
+    description: "Computer Science student passionate about full-stack web development and building modern responsive applications.",
+  },
   socials: {
     github: "https://github.com/SujeetDeo-31",
     linkedin: "https://www.linkedin.com/in/sujeet31in/",
@@ -44,6 +48,15 @@ export const PORTFOLIO_DATA = {
         desc: "Continuously improving through projects, DSA practice, and hands-on work with frontend, backend, APIs, and deployment.",
       },
     ]
+  },
+  resume: {
+    summary: "Computer Science undergraduate focused on Data Structures and Algorithms, Web Development, and Machine Learning. Built AI-powered web applications integrating LLM APIs and machine learning models, applying data-driven insights to solve real-world problems.",
+  },
+  contact: {
+    description: "Ready to take your project to the next level? I'm currently available for selective opportunities and learning experiences.",
+  },
+  footer: {
+    description: "Creating digital excellence through code and design. Based in Bhubaneswar, working globally.",
   },
   education: [
     {

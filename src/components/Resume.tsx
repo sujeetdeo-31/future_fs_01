@@ -11,7 +11,9 @@ export function Resume() {
       <div className="container mx-auto px-6">
         <div className="mb-12 flex flex-col gap-4">
           <h2 className="text-4xl font-headline font-bold flex items-center gap-4">
-            <Sparkles className="text-primary w-10 h-10" />
+            <span className="bg-primary/20 p-2 rounded-xl">
+              <Sparkles className="text-primary w-8 h-8" />
+            </span>
             Resume Overview
           </h2>
           <p className="text-muted-foreground max-w-3xl leading-relaxed">
@@ -25,11 +27,7 @@ export function Resume() {
             <div className="bg-card border border-border p-8 rounded-3xl shadow-lg">
               <h3 className="text-2xl font-headline font-bold mb-4">Summary</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Computer Science undergraduate focused on Data Structures and
-                Algorithms, Web Development, and Machine Learning. Built
-                AI-powered web applications integrating LLM APIs and machine
-                learning models, applying data-driven insights to solve
-                real-world problems.
+                {PORTFOLIO_DATA.resume.summary}
               </p>
             </div>
 
