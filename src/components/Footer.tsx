@@ -1,9 +1,9 @@
-
 "use client";
 
 import Link from "next/link";
 import { Github, Linkedin, Twitter, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PORTFOLIO_DATA } from "@/lib/constants";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -19,7 +19,7 @@ export function Footer() {
               Elite<span className="text-primary">Portfolio</span>
             </Link>
             <p className="text-muted-foreground text-sm">
-              Creating digital excellence through code and design. Based in San Francisco, working globally.
+              Creating digital excellence through code and design. Based in {PORTFOLIO_DATA.location}, working globally.
             </p>
           </div>
           
@@ -36,13 +36,13 @@ export function Footer() {
 
           <div className="flex flex-col items-center md:items-end gap-6">
             <div className="flex gap-4">
-              <a href="https://github.com/SujeetDeo-31" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href={PORTFOLIO_DATA.socials.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/sujeet31in/" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href={PORTFOLIO_DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
+              <a href={PORTFOLIO_DATA.socials.twitter} target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center border border-border rounded-full hover:bg-primary hover:text-primary-foreground transition-all">
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
@@ -53,7 +53,7 @@ export function Footer() {
         </div>
 
         <div className="pt-12 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Elite Portfolio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {PORTFOLIO_DATA.name}. All rights reserved.</p>
           <div className="flex gap-8">
             <Link href="#" className="hover:text-primary">Privacy Policy</Link>
             <Link href="#" className="hover:text-primary">Terms of Service</Link>

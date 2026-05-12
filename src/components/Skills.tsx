@@ -2,50 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-
-const SKILL_CATEGORIES = [
-  {
-    title: "Frontend Development",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React.js",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
-  },
-  {
-    title: "Backend & Database",
-    skills: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "MySQL",
-      "REST APIs",
-      "Firebase",
-    ],
-  },
-  {
-    title: "Programming & Tools",
-    skills: ["C", "C++", "Java", "Python", "Git", "GitHub", "VS Code", "Postman"],
-  },
-  {
-    title: "Machine Learning",
-    skills: [
-      "NumPy",
-      "Pandas",
-      "Scikit-learn",
-      "Matplotlib",
-      "Seaborn",
-      "Streamlit",
-    ],
-  },
-];
+import { PORTFOLIO_DATA } from "@/lib/constants";
 
 export function Skills() {
+  const categories = [
+    { title: "Frontend Development", skills: PORTFOLIO_DATA.skills.frontend },
+    { title: "Backend & Database", skills: PORTFOLIO_DATA.skills.backend },
+    { title: "Programming & Tools", skills: PORTFOLIO_DATA.skills.tools },
+    { title: "Machine Learning", skills: PORTFOLIO_DATA.skills.ml },
+  ];
+
   return (
     <section id="skills" className="py-24">
       <div className="container mx-auto px-6">
@@ -61,7 +27,7 @@ export function Skills() {
           </div>
 
           <div className="md:w-2/3 grid gap-10">
-            {SKILL_CATEGORIES.map((cat, i) => (
+            {categories.map((cat, i) => (
               <motion.div
                 key={cat.title}
                 initial={{ opacity: 0, x: 20 }}

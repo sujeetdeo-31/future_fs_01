@@ -3,52 +3,7 @@
 import { motion } from "framer-motion";
 import { Download, GraduationCap, Code2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const PROJECTS = [
-  {
-    title: "Travel AI – Predictive Intelligence Engine",
-    tech: "Next.js, React, TypeScript, Tailwind CSS, Google Gemini API, Framer Motion, Node.js",
-    desc:
-      "Built an AI-powered travel analysis dashboard with interactive data panels, structured travel insights, and server-side API handling for fast responses and improved stability.",
-  },
-  {
-    title: "Health Insurance Cost Prediction Using Machine Learning",
-    tech: "Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Streamlit",
-    desc:
-      "Developed an end-to-end ML pipeline for insurance cost prediction, including feature engineering, model training, evaluation, and a Streamlit web app for real-time predictions.",
-  },
-];
-
-const COURSEWORK = [
-  "Data Structures and Algorithms",
-  "Object Oriented Programming",
-  "Database Management System",
-  "Computer Networks",
-];
-
-const SKILLS = [
-  "Python",
-  "C",
-  "C++",
-  "Java",
-  "JavaScript",
-  "React.js",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "Node.js",
-  "MongoDB",
-  "MySQL",
-  "NumPy",
-  "Pandas",
-  "Scikit-learn",
-  "Matplotlib",
-  "Seaborn",
-  "Streamlit",
-  "Git",
-  "GitHub",
-  "Vercel",
-];
+import { PORTFOLIO_DATA } from "@/lib/constants";
 
 export function Resume() {
   return (
@@ -74,8 +29,7 @@ export function Resume() {
                 Algorithms, Web Development, and Machine Learning. Built
                 AI-powered web applications integrating LLM APIs and machine
                 learning models, applying data-driven insights to solve
-                real-world problems. Actively strengthening algorithmic
-                thinking through consistent practice and hands-on development.
+                real-world problems.
               </p>
             </div>
 
@@ -86,7 +40,7 @@ export function Resume() {
               </h3>
 
               <div className="space-y-8 relative border-l-2 border-primary/20 pl-8 ml-3">
-                {PROJECTS.map((project, i) => (
+                {PORTFOLIO_DATA.projects.map((project, i) => (
                   <motion.div
                     key={project.title}
                     initial={{ opacity: 0, x: -20 }}
@@ -96,9 +50,9 @@ export function Resume() {
                   >
                     <div className="absolute -left-[41px] top-1 w-5 h-5 bg-background border-4 border-primary rounded-full" />
                     <div className="flex flex-col gap-1">
-                    <h4 className="text-xl font-headline font-bold">{project.title}</h4>
+                      <h4 className="text-xl font-headline font-bold">{project.title}</h4>
                       <p className="text-sm text-muted-foreground italic">
-                        {project.tech}
+                        {project.techs.join(", ")}
                       </p>
                       <p className="text-muted-foreground mt-3 leading-relaxed">
                         {project.desc}
@@ -114,7 +68,7 @@ export function Resume() {
                 Technical Skills
               </h3>
               <div className="flex flex-wrap gap-3">
-                {SKILLS.map((skill) => (
+                {[...PORTFOLIO_DATA.skills.frontend, ...PORTFOLIO_DATA.skills.backend, ...PORTFOLIO_DATA.skills.tools].map((skill) => (
                   <span
                     key={skill}
                     className="px-4 py-2 rounded-full bg-secondary/60 border border-border text-sm font-medium"
@@ -133,24 +87,26 @@ export function Resume() {
                 Education
               </h3>
 
-              <div className="space-y-4">
-                <div>
-                  <span className="text-primary font-bold text-sm uppercase tracking-widest">
-                    Aug 2024 — Present
-                  </span>
-                  <h4 className="text-xl font-headline font-bold mt-1">
-                    B.Tech in Computer Science and Technology
-                  </h4>
-                  <p className="text-muted-foreground text-sm">
-                    C.V. Raman Global University
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    Bhubaneswar, Odisha
-                  </p>
-                  <p className="mt-2 text-sm">
-                    CGPA: <span className="font-semibold">8.90</span>
-                  </p>
-                </div>
+              <div className="space-y-8">
+                {PORTFOLIO_DATA.education.map((edu, idx) => (
+                  <div key={idx}>
+                    <span className="text-primary font-bold text-sm uppercase tracking-widest">
+                      {edu.period}
+                    </span>
+                    <h4 className="text-xl font-headline font-bold mt-1">
+                      {edu.degree}
+                    </h4>
+                    <p className="text-muted-foreground text-sm">
+                      {edu.institution}
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                      {edu.location}
+                    </p>
+                    <p className="mt-2 text-sm">
+                      CGPA: <span className="font-semibold">{edu.gpa}</span>
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -159,7 +115,7 @@ export function Resume() {
                 Relevant Coursework
               </h3>
               <div className="flex flex-wrap gap-3">
-                {COURSEWORK.map((item) => (
+                {PORTFOLIO_DATA.coursework.map((item) => (
                   <span
                     key={item}
                     className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium"
@@ -184,7 +140,7 @@ export function Resume() {
                 variant="secondary"
                 className="w-full rounded-full font-bold relative z-10"
               >
-                <a href="/resume.pdf" download>
+                <a href={PORTFOLIO_DATA.resumeUrl} download>
                   <Download className="mr-2 w-4 h-4" />
                   Download Resume
                 </a>

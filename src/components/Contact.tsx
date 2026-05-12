@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -8,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { PORTFOLIO_DATA } from "@/lib/constants";
 
 export function Contact() {
   const { toast } = useToast();
@@ -67,11 +67,8 @@ export function Contact() {
     }
   };
 
-   
-
   return (
     <section id="contact" className="py-24 bg-secondary/30 relative overflow-hidden">
-      {/* Background accents */}
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl pointer-events-none" />
       
       <div className="container mx-auto px-6">
@@ -79,7 +76,7 @@ export function Contact() {
           <div>
             <h2 className="text-4xl font-headline font-bold mb-6">Let's <span className="text-primary">Collaborate</span></h2>
             <p className="text-muted-foreground text-lg mb-12">
-              Ready to take your project to the next level? I'm currently available for selective freelance opportunities and consulting.
+              Ready to take your project to the next level? I'm currently available for selective opportunities and learning experiences.
             </p>
             
             <div className="space-y-8">
@@ -89,7 +86,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Email Me</p>
-                  <p className="text-xl font-headline font-bold">sujitkumardeo31@gmail.com</p>
+                  <p className="text-xl font-headline font-bold">{PORTFOLIO_DATA.email}</p>
                 </div>
               </div>
               
@@ -99,7 +96,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Call Me</p>
-                  <p className="text-xl font-headline font-bold">+91 7978060382</p>
+                  <p className="text-xl font-headline font-bold">{PORTFOLIO_DATA.phone}</p>
                 </div>
               </div>
               
@@ -109,7 +106,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground uppercase tracking-widest font-bold">Location</p>
-                  <p className="text-xl font-headline font-bold">Bhubaneswar, IN</p>
+                  <p className="text-xl font-headline font-bold">{PORTFOLIO_DATA.location}</p>
                 </div>
               </div>
             </div>

@@ -2,42 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
-
-const PROJECTS = [
-  {
-    id: "project-1",
-    title: "Travel AI – Predictive Intelligence Engine",
-    desc: "An AI-powered travel analysis dashboard that uses Google Gemini API to generate structured travel insights, compare trip options, and help users plan trips more efficiently through interactive data panels.",
-    techs: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Gemini API",
-    ],
-    github: "https://github.com/SujeetDeo-31/travel-intelligence-engine",
-    demo: "https://travel-web-intelligence-engine.vercel.app/",
-  },
-  {
-    id: "project-2",
-    title: "Health Insurance Cost Prediction",
-    desc: "A machine learning web application that predicts health insurance charges using demographic and lifestyle data. Built with feature engineering, model evaluation, and deployed with Streamlit for real-time predictions.",
-    techs: [
-      "Python",
-      "Scikit-learn",
-      "Pandas",
-      "NumPy",
-      "Streamlit",
-      "Machine Learning",
-    ],
-    github: "https://github.com/SujeetDeo-31/Health-Insurance-Charges-Predictor-AI",
-    demo: "https://insurance-charges-predictor.streamlit.app/",
-  },
-];
+import { PORTFOLIO_DATA } from "@/lib/constants";
 
 export function Projects() {
   return (
@@ -54,7 +22,7 @@ export function Projects() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {PROJECTS.map((project, i) => {
+          {PORTFOLIO_DATA.projects.map((project, i) => {
             const imgData = PlaceHolderImages.find((img) => img.id === project.id);
 
             return (
@@ -78,12 +46,14 @@ export function Projects() {
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                     <a
                       href={project.github}
+                      target="_blank" rel="noopener noreferrer"
                       className="bg-background p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-all"
                     >
                       <Github className="w-5 h-5" />
                     </a>
                     <a
                       href={project.demo}
+                      target="_blank" rel="noopener noreferrer"
                       className="bg-background p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-all"
                     >
                       <ExternalLink className="w-5 h-5" />
@@ -129,22 +99,3 @@ export function Projects() {
     </section>
   );
 }
-
-const ArrowRight = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M1 8H15M15 8L8 1M15 8L8 15"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
