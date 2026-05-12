@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -7,16 +6,43 @@ import { Badge } from "@/components/ui/badge";
 const SKILL_CATEGORIES = [
   {
     title: "Frontend Development",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux", "Framer Motion", "Three.js"]
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
   },
   {
-    title: "Backend & DevOps",
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Redis", "Docker", "AWS", "GitHub Actions"]
+    title: "Backend & Database",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MySQL",
+      "REST APIs",
+      "Firebase",
+    ],
   },
   {
-    title: "Tools & Architectures",
-    skills: ["Microservices", "GraphQL", "REST APIs", "Jest", "Storybook", "Figma", "Firebase"]
-  }
+    title: "Programming & Tools",
+    skills: ["C", "C++", "Java", "Python", "Git", "GitHub", "VS Code", "Postman"],
+  },
+  {
+    title: "Machine Learning",
+    skills: [
+      "NumPy",
+      "Pandas",
+      "Scikit-learn",
+      "Matplotlib",
+      "Seaborn",
+      "Streamlit",
+    ],
+  },
 ];
 
 export function Skills() {
@@ -25,18 +51,15 @@ export function Skills() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="md:w-1/3">
-            <h2 className="text-4xl font-headline font-bold mb-6">Technical <span className="text-primary">Proficiency</span></h2>
+            <h2 className="text-4xl font-headline font-bold mb-6">
+              Technical <span className="text-primary">Skills</span>
+            </h2>
             <p className="text-muted-foreground mb-8">
-              A comprehensive list of technologies I use to bring ideas to life. I stay at the forefront of the industry to provide the best solutions.
+              Technologies and tools I use while building full-stack web
+              applications, APIs, and machine learning projects.
             </p>
-            <div className="p-6 bg-secondary/50 rounded-2xl border border-border">
-              <p className="text-sm font-medium italic">
-                "Code is like humor. When you have to explain it, it’s bad."
-              </p>
-              <p className="text-xs mt-2 text-primary font-bold uppercase">— Cory House</p>
-            </div>
           </div>
-          
+
           <div className="md:w-2/3 grid gap-10">
             {SKILL_CATEGORIES.map((cat, i) => (
               <motion.div
@@ -51,9 +74,9 @@ export function Skills() {
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {cat.skills.map((skill) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
+                    <Badge
+                      key={skill}
+                      variant="secondary"
                       className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all cursor-default"
                     >
                       {skill}

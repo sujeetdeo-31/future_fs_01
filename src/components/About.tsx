@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -9,7 +8,7 @@ export function About() {
     <section id="about" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl font-headline font-bold mb-4"
@@ -18,8 +17,10 @@ export function About() {
           </motion.h2>
           <div className="h-1.5 w-20 bg-primary mx-auto rounded-full mb-8" />
           <p className="text-muted-foreground text-lg leading-relaxed">
-            I am a passionate software developer with a mission to solve complex problems through elegant code. 
-            My journey began over a decade ago, and since then, I've had the privilege of working with startups and industry giants to build transformative digital solutions.
+            I am a Computer Science student who enjoys building practical web
+            applications and learning how real products are designed, developed,
+            and deployed. My focus is on full-stack development, clean UI, and
+            solving problems through code.
           </p>
         </div>
 
@@ -27,19 +28,19 @@ export function About() {
           {[
             {
               icon: <User className="w-8 h-8 text-primary" />,
-              title: "Expertise",
-              desc: "Deep knowledge in modern JavaScript frameworks (React, Next.js, Node.js) and TypeScript."
+              title: "Background",
+              desc: "B.Tech student in Computer Science and Technology with a strong interest in web development, software engineering, and machine learning.",
             },
             {
               icon: <Cpu className="w-8 h-8 text-primary" />,
-              title: "Process",
-              desc: "Test-driven development, CI/CD pipelines, and agile methodologies for reliable software delivery."
+              title: "What I Build",
+              desc: "Modern responsive websites and applications using React, Next.js, TypeScript, Node.js, Express.js, MongoDB, and Tailwind CSS.",
             },
             {
               icon: <Rocket className="w-8 h-8 text-primary" />,
-              title: "Vision",
-              desc: "Committed to creating accessible, user-centric interfaces that provide exceptional user experiences."
-            }
+              title: "Learning Focus",
+              desc: "Continuously improving through projects, DSA practice, and hands-on work with frontend, backend, APIs, and deployment.",
+            },
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -53,8 +54,12 @@ export function About() {
                   {item.icon}
                 </div>
               </div>
-              <h3 className="text-2xl font-headline font-bold mb-4">{item.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+              <h3 className="text-2xl font-headline font-bold mb-4">
+                {item.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </div>
