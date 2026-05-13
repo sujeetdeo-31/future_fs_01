@@ -72,7 +72,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "project-1",
       title: "Travel AI – Predictive Intelligence Engine",
-      image: "/projects/insurance-ml.png",
+      image: "/projects/travel-ai.png",
       desc: "An AI-powered travel analysis dashboard that uses Google Gemini API to generate structured travel insights, compare trip options, and help users plan trips more efficiently through interactive data panels.",
       techs: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Gemini API"],
       github: "https://github.com/SujeetDeo-31/travel-intelligence-engine",
@@ -81,7 +81,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "project-2",
       title: "Health Insurance Cost Prediction",
-      image: "/projects/travel-ai.png",
+      image: "/projects/insurance-ml.png",
       desc: "A machine learning web application that predicts health insurance charges using demographic and lifestyle data. Built with feature engineering, model evaluation, and deployed with Streamlit for real-time predictions.",
       techs: ["Python", "Scikit-learn", "Pandas", "NumPy", "Streamlit", "Machine Learning"],
       github: "https://github.com/SujeetDeo-31/Health-Insurance-Charges-Predictor-AI",
