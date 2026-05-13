@@ -46,4 +46,4 @@ https://github.com/SujeetDeo-31/FUTURE_FS_01
 
 ## Live Demo
 
-https://future-fs-01-phi-navy.vercel.app/
+https://sujeet31-portfolio.vercel.app/
