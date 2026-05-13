@@ -43,3 +43,7 @@ npm run dev
 ## GitHub Repository
 
 https://github.com/SujeetDeo-31/FUTURE_FS_01
+
+## Live Demo
+
+https://future-fs-01-phi-navy.vercel.app/
